@@ -4,6 +4,8 @@ import Producto from "./components/producto"
 
 
 function App() {
+ 
+    const [auth, setAuth] = useState(false);
 
     //states
     //no se puede poner un hook en un condicional
@@ -11,10 +13,17 @@ function App() {
     //no deben estar en ciclos de repeticion ni en funciones
 
     useEffect(()=>{
-        console.log("Componente listo")
-    }, [])  //arreglo vacío no tiene dependencias (se actualiza solo una vez cuando componente listo)
+        if(auth)
+        {
+            console.log('Autenticado')
+        }
+    }, [auth])  //arreglo vacío no tiene dependencias (se actualiza solo una vez cuando componente listo)
             //si dentro del arreglo pongo variables, se actualizara además de esa vez
             // siempre que cambie alguna de esas variables)
+    setTimeout(() =>{
+        setAuth(true)
+    }, 3000);
+
   return (
     <>
     <Header/>
