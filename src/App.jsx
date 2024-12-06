@@ -4,25 +4,10 @@ import Producto from "./components/producto"
 import { db } from "./data/db";
 
 function App() {
- 
-    const [auth, setAuth] = useState(false);
+    const [data, setData] = useState(db)
+    console.log(db)
 
-    //states
-    //no se puede poner un hook en un condicional
-    //parte superior de la función, deben ejecutarse todo el tiempo
-    //no deben estar en ciclos de repeticion ni en funciones
 
-    useEffect(()=>{
-        if(auth)
-        {
-            console.log('Autenticado')
-        }
-    }, [auth])  //arreglo vacío no tiene dependencias (se actualiza solo una vez cuando componente listo)
-            //si dentro del arreglo pongo variables, se actualizara además de esa vez
-            // siempre que cambie alguna de esas variables)
-    setTimeout(() =>{
-        setAuth(true)
-    }, 3000);
 
   return (
     <>
