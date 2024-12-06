@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import Header from "./components/header"
 import Producto from "./components/producto"
-
+import { db } from "./data/db";
 
 function App() {
  
