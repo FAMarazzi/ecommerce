@@ -5,7 +5,7 @@ import { db } from "./data/db";
 
 function App() {
     const [data, setData] = useState(db)
-
+    const [cart, setCart] =useState([])
   return (
     //aqui dentro se pueden usar expressions: 
     //ternarios, array methods que generen un nuevo array o un .map que genere un nuevo array
@@ -18,8 +18,9 @@ function App() {
             <Producto
             //los props comparten info entre componentes,
             //siempre de padre a hijo
-            key={producto.id}
+            key={producto.id} //siempre la key debe existir en componentes creados muchas veces y debe ser una clave irrepetible
             producto={producto}
+            setCart={setCart}
             />
           )
           )}

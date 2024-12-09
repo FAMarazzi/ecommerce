@@ -1,5 +1,6 @@
-export default function Producto({producto}){
+export default function Producto({producto, setCart}){
     const {id, name, image, description, price } = producto
+
     return(
         
         <div className="col-md-6 col-lg-4 my-4 row align-items-center">
@@ -13,6 +14,10 @@ export default function Producto({producto}){
                     <button 
                         type="button"
                         className="btn btn-dark w-100"
+                        onClick={() => setCart(prevCart => [...prevCart, producto])}
+                        //poniendo un callback, el primer argumento es el argumento actual del estado
+                        // y usando ...prevcart conserva el arreglo de carrito actual agregando un nuevo
+                        //producto al arreglo
                     >Agregar al Carrito</button>
                 </div>
             </div>
