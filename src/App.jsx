@@ -1,23 +1,29 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import Header from "./components/header"
 import Producto from "./components/producto"
 import { db } from "./data/db";
 
 function App() {
     const [data, setData] = useState(db)
-    console.log(db)
-
-    useEffect(()=>{
-
-    },[])
 
   return (
+    //aqui dentro se pueden usar expressions: 
+    //ternarios, array methods que generen un nuevo array o un .map que genere un nuevo array
     <>
     <Header/>
     <main className="container-xl mt-5">
         <h2 className="text-center">Nuestra Colección</h2>
         <div className="row mt-5">
-             <Producto/>
+          {data.map((producto) => (
+            <Producto
+            //los props comparten info entre componentes,
+            //siempre de padre a hijo
+            key={producto.id}
+            producto={producto}
+            />
+          )
+          )}
+             
         </div>
     </main>
 
