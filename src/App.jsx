@@ -6,6 +6,21 @@ import { db } from "./data/db";
 function App() {
     const [data, setData] = useState(db)
     const [cart, setCart] =useState([])
+    
+    function addToCart(item){
+      const itemExists =cart.findIndex((producto) => producto.id === item.id)
+      if(itemExists>=0){
+        const updatedCart=[...cart]
+        updatedCart[itemExists].quantity++
+        setCart(updatedCart)
+      }
+      else{
+        item.quantity=1
+        setCart([...cart, item])
+      }
+      
+      
+  }
   return (
     //aqui dentro se pueden usar expressions: 
     //ternarios, array methods que generen un nuevo array o un .map que genere un nuevo array
@@ -21,6 +36,7 @@ function App() {
             key={producto.id} //siempre la key debe existir en componentes creados muchas veces y debe ser una clave irrepetible
             producto={producto}
             setCart={setCart}
+            addToCart={addToCart}
             />
           )
           )}
