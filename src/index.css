@@ -1,6 +1,6 @@
 @charset "UTF-8";
 .fw-black {
-  font-weight: 900;
+  font-weight: 400;
 }
 
 .btn-dark {
@@ -159,7 +159,7 @@ body {
   font-family: "Outfit", sans-serif;
   font-weight: 900;
   line-height: 1.2;
-  color: #e99401;
+  color: #000000;
 }
 
 h1, .h1 {
@@ -642,8 +642,8 @@ button:not(:disabled),
 }
 
 .py-5 {
-  padding-top: 3rem !important;
-  padding-bottom: 3rem !important;
+  padding-top: 0.3rem !important;
+  padding-bottom: 0.3rem !important;
 }
 
 .pt-5 {
@@ -691,7 +691,7 @@ button:not(:disabled),
 /* rtl:end:remove */
 .text-primary {
   --bs-text-opacity: 1;
-  color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
+  color: black !important;
 }
 
 .text-black {
@@ -754,9 +754,8 @@ button:not(:disabled),
   }
 }
 .header {
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/header.jpg");
+  background-color: black;
   /** TODO: Eliminar la sig linea **/
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../public/img/header.jpg");
   background-position: 50%;
   background-size: cover;
   position: relative;
