@@ -18,15 +18,17 @@ function App() {
         item.quantity=1
         setCart([...cart, item])
       }
-      
-      
+  }
+  function quitarProducto(id){
+    setCart(prevCart => prevCart.filter(producto => producto.id !== id))
   }
   return (
     //aqui dentro se pueden usar expressions: 
     //ternarios, array methods que generen un nuevo array o un .map que genere un nuevo array
     <>
     <Header
-      cart={cart}
+      cart={cart}    
+      quitarProducto={quitarProducto}
     
     />
     <main className="container-xl mt-5">

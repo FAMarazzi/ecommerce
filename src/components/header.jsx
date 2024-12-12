@@ -1,7 +1,14 @@
 import Producto from "./producto";
+import {useMemo} from 'react'
 
-export default function Header({cart}){
+export default function Header({cart, quitarProducto}){
     //Aca se definen los states
+//state derivado (una función o variable que depende de un state)
+    const isEmpty= useMemo( () => cart.length === 0, [cart])//STATE DERIVADO ) 
+    //ahora que agregué el use memo, el isEmpty no pregunta si está vacío el carrito a cada rato
+    //solamente guarda el estado que el useMemo recuerda y solamente hace el calculo si el estado cambia
+    const cartTotal= useMemo( () => cart.reduce((total, item) => total + (item.quantity * item.price), 0), [cart])
+
     return(
         <header className="py-5 header">
         <div className="container-xl">
@@ -18,9 +25,10 @@ export default function Header({cart}){
                         <img className="img-fluid" src="./public/img/carrito.png" alt="imagen carrito" />
 
                         <div id="carrito" className="bg-white p-3">
-                            {cart.length === 0 ? (
+                            {isEmpty ? (
                                 <p className="text-center">El carrito esta vacio</p>
                             ) : (
+                                <>
                             <table className="w-100 table">
                                 <thead>
                                     <tr>
@@ -60,6 +68,7 @@ export default function Header({cart}){
                                             <button
                                                 className="btn btn-danger"
                                                 type="button"
+                                                onClick={ ()=> quitarProducto(producto.id)}
                                             >
                                                 X
                                             </button>
@@ -69,8 +78,10 @@ export default function Header({cart}){
                                     ))}
                                 </tbody>
                             </table>
-                            )}
-                            <p className="text-end">Total pagar: <span className="fw-bold">$899</span></p>
+                            
+                            <p className="text-end">Total pagar: <span className="fw-bold">${cartTotal}</span></p>
+                            </>
+                        )}
                             <button className="btn btn-dark w-100 mt-3 p-2">Vaciar Carrito</button>
                         </div>
                     </div>
