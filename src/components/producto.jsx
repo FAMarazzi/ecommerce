@@ -3,14 +3,14 @@ export default function Producto({producto, addToCart}){
 
     return(
         
-        <div className="col-md-6 col-lg-4 my-4 row align-items-center">
-                <div className="col-4">
+        <div className="col-md-6 col-lg-4 my-4 align-items-center">
+                <div className="d-flex.flex-column col-4">
                     <img className="img-fluid" src={`/img/${image}.jpg`} alt="imagen guitarra" />
                 </div>
                 <div className="col-8">
-                    <h3 className="text-black fs-4 fw-bold text-uppercase">{name}</h3>
-                    <p>{description}</p>
-                    <p className="fw-black text-primary fs-3">${price}</p>
+                    <h3 className="text-black text-center fs-4 fw-bold text-uppercase">{name}</h3>
+                    <p className="fw-black text-primary text-center fs-3--bs-text-opacity no-margin">${price}</p>
+                    <p className="text-center">{description}</p>
                     <button 
                         type="button"
                         className="btn btn-dark w-100"

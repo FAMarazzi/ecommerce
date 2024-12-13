@@ -1,6 +1,10 @@
 @charset "UTF-8";
 .fw-black {
-  font-weight: 400;
+  font-weight: 400; 
+}
+
+.no-margin{
+  margin-bottom: 0;
 }
 
 .btn-dark {
@@ -44,6 +48,15 @@
   font-size: 10px;
   border-radius: 50%;
   padding: 5px 9px;
+}
+.d-flex.flex-column {
+  background-color: #ffffff; /* Fondo opcional para visualizar la tarjeta */
+  padding: 1rem; /* Opcional: borde de la tarjeta */
+}
+
+.img-fluid.mb-3 {
+  max-height: 300px; /* Ajusta el tamaño máximo de la imagen */
+  object-fit: contain; /* Para que mantenga proporción */
 }
 
 #carrito .btn-dark {
@@ -154,7 +167,7 @@ body {
 }
 
  h3, .h3, h2, .h2, h1, .h1 {
-  margin-top: 0;
+  margin-top: 1rem;
   margin-bottom: 0.5rem;
   font-family: "Outfit", sans-serif;
   font-weight: 900;
@@ -350,19 +363,22 @@ button:not(:disabled),
   flex-shrink: 0;
   width: 100%;
   max-width: 100%;
-  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  /*padding-right: calc(var(--bs-gutter-x) * 0.5);
   padding-left: calc(var(--bs-gutter-x) * 0.5);
+  */
   margin-top: var(--bs-gutter-y);
+  margin-left: calc(var(--bs-gutter-x) * 0.5);
+  margin-right: calc(var(--bs-gutter-x) * 0.5);
 }
 
 .col-4 {
   flex: 0 0 auto;
-  width: 33.33333333%;
+  width: 100%;
 }
 
 .col-8 {
   flex: 0 0 auto;
-  width: 66.66666667%;
+  width: 100%;
 }
 @media (min-width: 768px) {
   .col-md-3 {
@@ -371,13 +387,14 @@ button:not(:disabled),
   }
   .col-md-6 {
     flex: 0 0 auto;
-    width: 50%;
+    width: 33%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
 }
 @media (min-width: 992px) {
   .col-lg-4 {
     flex: 0 0 auto;
-    width: 33.33333333%;
+    width: 20%; 
   }
 }
 .table {
@@ -584,6 +601,7 @@ button:not(:disabled),
 
 .d-flex {
   display: flex !important;
+  
 }
 
 .w-100 {
@@ -658,12 +676,10 @@ button:not(:disabled),
   font-size: calc(1.565rem + 3.78vw) !important;
 }
 
-.fs-3 {
-  font-size: calc(1.385rem + 1.62vw) !important;
-}
 
-.fs-4 {
-  font-size: calc(1.275rem + 0.3vw) !important;
+
+.fs-4, .fs-3 {
+  font-size: calc(1rem + 0.3vw) !important;
 }
 
 .fs-5 {
@@ -671,7 +687,7 @@ button:not(:disabled),
 }
 
 .fw-bold {
-  font-weight: 700 !important;
+  font-weight: 500 !important;
 }
 
 .text-end {
@@ -698,7 +714,9 @@ button:not(:disabled),
   --bs-text-opacity: 1;
   color: rgba(var(--bs-black-rgb), var(--bs-text-opacity)) !important;
 }
-
+.text-center{
+  text-align: center;
+}
 .text-white {
   --bs-text-opacity: 1;
   color: rgba(var(--bs-white-rgb), var(--bs-text-opacity)) !important;
