@@ -3,7 +3,7 @@ export default function Producto({producto, addToCart}){
 
     return(
         
-        <div className="col-md-6 col-lg-4 my-4 align-items-center">
+        <div className="col-md-6 sombra-items col-lg-4 my-4 align-items-center">
                 <div className="d-flex.flex-column col-4">
                     <img className="img-fluid" src={`/img/${image}.jpg`} alt="imagen guitarra" />
                 </div>
@@ -18,7 +18,7 @@ export default function Producto({producto, addToCart}){
                         //poniendo un callback, el primer argumento es el argumento actual del estado
                         // y usando ...prevcart conserva el arreglo de carrito actual agregando un nuevo
                         //producto al arreglo
-                    >Agregar al Carrito</button>
+                    ><img className="img-chica" src="./public/img/carrito.png" alt="imagen carrito" /></button>
                 </div>
             </div>
     )
