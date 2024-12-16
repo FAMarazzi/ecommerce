@@ -391,7 +391,7 @@ button:not(:disabled),
   }
   .col-md-6 {
     flex: 0 0 auto;
-    width: 33%;
+    width: 30%;
   }
   .sombra-items{
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -699,8 +699,11 @@ button:not(:disabled),
   font-size: 1.25rem !important;
 }
 
+.fs-7{
+  font-size: 0.85 rem !important;
+}
 .fw-bold {
-  font-weight: 500 !important;
+  font-weight: 700 !important;
 }
 
 .text-end {
