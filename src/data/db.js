@@ -1,17 +1,17 @@
 export const db = [
   {
       id: 1,
-      name: 'Lukather',
-      image: 'guitarra_01',
-      description: 'Morbi ornare augue nisl, vel elementum dui mollis vel. Curabitur non ex id eros fermentum hendrerit.',
-      price: 299,
+      name: 'Wide Leg Storm Las Locas',
+      image: 'jean_01',
+      description: 'WIDE LEG MATIZADO RÍGIDO. TALLES 34 AL 44. COLOR AZUL VERDOSO',
+      price: 60000,
   },
   {
       id: 2,
-      name: 'SRV',
-      image: 'guitarra_02',
-      description: 'Morbi ornare augue nisl, vel elementum dui mollis vel. Curabitur non ex id eros fermentum hendrerit.',
-      price: 349,
+      name: 'Jogging Sporty',
+      image: 'jogging_01',
+      description: 'TALLES S AL XL. COLORES: BEIGE - NEGRO - AZUL - ROJO',
+      price: 52999.99,
   },
   {
       id: 3,
